@@ -1,8 +1,6 @@
 # BarkboxClient
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/barkbox_client`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A Ruby API client for Barkbox.
 
 ## Installation
 
@@ -22,7 +20,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+BarkboxClient requires several configuration variables to be set before usage. These variables can be set through the environment, or through the `.configure` method. Values set with `.configure` take precedence over values set through the environment.
+
+```ruby
+
+require 'barkbox_client'
+
+BarkboxClient.configure do |config|
+	# Any object that implements the Ruby logger interface. Defaults to Logger.new(STDOUT)
+	config.logger = Rails.logger 
+	# The application id to be used for requests to Barkbox. Defaults to ENV['BARKBOX_APP_ID']
+	config.app_id = '12345'
+	# The secret key to be used for requests to Barkbox. Defaults to ENV['BARKBOX_SECRET_KEY']
+	config.barkbox_secret = 'XXXXXXXXXXX'
+	# The URL to use for authorization with Barkbox. Defaults to ENV['BARKBOX_AUTH_URL']
+	config.barkbox_auth_url = 'https://some.url'
+	# The oAuth token for the application. Defaults to ENV['BARKBOX_OAUTH_TOKEN']
+	config.barkbox_oauth_token = 'SOMEREALLYLONGSTRING'
+end
+
+```
 
 ## Development
 
@@ -32,5 +49,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/barkbox_client.
+Bug reports and pull requests are welcome on GitHub at https://github.com/barkbox/barkbox_client.
 
