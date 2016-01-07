@@ -1,8 +1,8 @@
-require "barkbox_client/version"
 require "json"
+require "logger"
+require "barkbox_client/version"
 require "barkbox_client/api_error"
 require "barkbox_client/configuration"
-require "logger"
 
 module BarkboxClient
 
