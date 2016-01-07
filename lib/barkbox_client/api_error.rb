@@ -1,4 +1,4 @@
-class ApiError < StandardError
+class BarkboxClient::ApiError < StandardError
   attr_accessor :status, :errors
 
   def initialize(response)
