@@ -27,7 +27,7 @@ module BarkboxClient
     end
 
     def ok? protocol, path, params={}
-      response = app_request(protocol, path, params)
+      response = app_request(protocol, path, options_for(protocol, params))
       return (response.status == 200)
     end
     
@@ -40,7 +40,7 @@ module BarkboxClient
       path = '/api/v2/' + path unless path.include?('http')
       log('app', path, params)
       @app_token = nil if app_token.expired?
-      response = app_token.send(protocol.to_s, path, params: params)
+      response = app_token.send(protocol.to_s, path, options_for(protocol, params))
       response
     end
 
@@ -49,7 +49,7 @@ module BarkboxClient
       log('system', path, params)
       token = OAuth2::AccessToken.new(client, barkbox_oauth_token)
       token.refresh! if token.expired?
-      response = token.send(protocol.to_s, path, params: params)
+      response = token.send(protocol.to_s, path, options_for(protocol, params))
       logger.info "[api response][system]: #{response.inspect}"
       raise ApiError.new(response) unless (response.status == 200)
       return json(response)
@@ -60,7 +60,7 @@ module BarkboxClient
       log('user', path, params)
       token = OAuth2::AccessToken.new(client, user.access_token)
       token.refresh! if token.expired?
-      response = token.send(protocol.to_s, path, params: params)
+      response = token.send(protocol.to_s, path, options_for(protocol, params))
       logger.info "[api response][user]: #{response.inspect}"
       raise ApiError.new(response) unless (response.status == 200)
       return json(response)
@@ -108,6 +108,25 @@ module BarkboxClient
 
   def config
     @config ||= Configuration.new(self)
+  end
+
+  def body_methods
+    @body_methods ||= %w(post put patch)
+  end
+
+  def param_methods
+    @param_methods ||= %w(get delete)
+  end
+
+  def options_for protocol, params
+    protocol = protocol.dup.to_s.downcase
+    if body_methods.include?(protocol) 
+      { body: params }
+    elsif param_methods.include?(protocol)
+      { params: params }
+    else
+      raise "#{protocol} is not a valid HTTP verb"
+    end
   end
 
   end
