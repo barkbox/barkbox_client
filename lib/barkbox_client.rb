@@ -119,7 +119,7 @@ module BarkboxClient
   end
 
   def options_for protocol, params
-    protocol = protocol.dup.to_s.downcase
+    protocol = protocol.to_s.downcase
     if body_methods.include?(protocol) 
       { body: params }
     elsif param_methods.include?(protocol)
