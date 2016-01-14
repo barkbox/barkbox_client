@@ -76,7 +76,7 @@ module BarkboxClient
     end
 
     def client
-      @instance ||= OAuth2::Client.new(app_id, barkbox_secret, {site: barkbox_auth_url, raise_errors: false})
+      @instance ||= OAuth2::Client.new(app_id, barkbox_secret, {site: barkbox_auth_url, raise_errors: false}){|c| c.request :json }
     end
 
     def app_token
