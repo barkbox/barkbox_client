@@ -120,8 +120,9 @@ module BarkboxClient
 
   def options_for protocol, params
     protocol = protocol.to_s.downcase
+    options = { headers: { 'Content-Type' => 'application/json'} }
     if body_methods.include?(protocol) 
-      { body: params }
+      { body: params.to_json }
     elsif param_methods.include?(protocol)
       { params: params }
     else
