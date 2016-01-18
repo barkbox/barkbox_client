@@ -122,9 +122,9 @@ module BarkboxClient
     protocol = protocol.to_s.downcase
     options = { headers: { 'Content-Type' => 'application/json'} }
     if body_methods.include?(protocol) 
-      { body: params.to_json }
+      options.merge({ body: params.to_json })
     elsif param_methods.include?(protocol)
-      { params: params }
+      options.merge({ params: params })
     else
       raise "#{protocol} is not a valid HTTP verb"
     end
