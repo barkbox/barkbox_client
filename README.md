@@ -31,7 +31,7 @@ BarkboxClient.configure do |config|
 	config.logger = Rails.logger 
 	# The application id to be used for requests to Barkbox. Defaults to ENV['BARKBOX_APP_ID']
 	config.app_id = '12345'
-	# The secret key to be used for requests to Barkbox. Defaults to ENV['BARKBOX_SECRET_KEY']
+	# The secret key to be used for requests to Barkbox. Defaults to ENV['BARKBOX_SECRET']
 	config.barkbox_secret = 'XXXXXXXXXXX'
 	# The URL to use for authorization with Barkbox. Defaults to ENV['BARKBOX_AUTH_URL']
 	config.barkbox_auth_url = 'https://some.url'
