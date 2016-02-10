@@ -30,5 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
 
   spec.add_runtime_dependency "multi_json"
-  spec.add_runtime_dependency "oauth2", "~> 1.0.0"
+  spec.add_runtime_dependency "oauth2", "> 1.0.0"
 end
