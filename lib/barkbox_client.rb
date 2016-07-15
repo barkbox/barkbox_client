@@ -27,7 +27,7 @@ module BarkboxClient
     end
 
     def ok? protocol, path, params={}
-      response = app_request(protocol, path, options_for(protocol, params))
+      response = app_request(protocol, path, params)
       return (response.status == 200)
     end
     
