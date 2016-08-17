@@ -31,14 +31,8 @@ module BarkboxClient
       return (response.status == 200)
     end
     
-    def log type, path, params
-      logger.info "[api request][#{type}]: #{path}"
-      logger.info "[api request][#{type}]: #{params.except(:credit_card, :password, :password_confirmation)}"
-    end
-
     def app_request protocol, path, params={}
       path = '/api/v2/' + path unless path.include?('http')
-      log('app', path, params)
       @app_token = nil if app_token.expired?
       response = app_token.send(protocol.to_s, path, options_for(protocol, params))
       response
@@ -46,7 +40,6 @@ module BarkboxClient
 
     def system protocol, path, params={}
       path = '/api/v2/' + path unless path.include?('http')
-      log('system', path, params)
       token = OAuth2::AccessToken.new(client, barkbox_oauth_token)
       token.refresh! if token.expired?
       response = token.send(protocol.to_s, path, options_for(protocol, params))
@@ -56,7 +49,6 @@ module BarkboxClient
 
     def user user, protocol, path, params={}
       path = '/api/v2/' + path unless path.include?('http')
-      log('user', path, params)
       token = OAuth2::AccessToken.new(client, user.access_token)
       token.refresh! if token.expired?
       response = token.send(protocol.to_s, path, options_for(protocol, params))
