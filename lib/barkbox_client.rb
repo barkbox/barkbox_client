@@ -50,7 +50,6 @@ module BarkboxClient
       token = OAuth2::AccessToken.new(client, barkbox_oauth_token)
       token.refresh! if token.expired?
       response = token.send(protocol.to_s, path, options_for(protocol, params))
-      logger.info "[api response][system]: #{response.inspect}"
       raise ApiError.new(response) unless (response.status == 200)
       return json(response)
     end
@@ -61,7 +60,6 @@ module BarkboxClient
       token = OAuth2::AccessToken.new(client, user.access_token)
       token.refresh! if token.expired?
       response = token.send(protocol.to_s, path, options_for(protocol, params))
-      logger.info "[api response][user]: #{response.inspect}"
       raise ApiError.new(response) unless (response.status == 200)
       return json(response)
     end
@@ -71,7 +69,6 @@ module BarkboxClient
       if response.nil? || response.token.nil? || response.token.empty?
         return nil
       end
-      logger.info "[api response][user_token_from_credentials]: #{response.inspect}"
       return response
     end
 
