@@ -4,6 +4,7 @@ require "oauth2"
 require "barkbox_client/version"
 require "barkbox_client/api_error"
 require "barkbox_client/configuration"
+require "barkbox_client/engine"
 
 module BarkboxClient
 
