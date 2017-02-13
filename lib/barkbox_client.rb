@@ -48,9 +48,9 @@ module BarkboxClient
       return json(response)
     end
 
-    def user user, protocol, path, params={}
+    def user user_token, protocol, path, params={}
       path = '/api/v2/' + path unless path.include?('http')
-      token = OAuth2::AccessToken.new(client, user.access_token)
+      token = OAuth2::AccessToken.new(client, user_token.access_token)
       token.refresh! if token.expired?
       response = token.send(protocol.to_s, path, options_for(protocol, params))
       raise ApiError.new(response) unless (response.status == 200)
