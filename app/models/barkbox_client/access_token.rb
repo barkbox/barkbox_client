@@ -1,4 +1,4 @@
 module BarkboxClient
-  class AccessToken < ActiveRecord::Base
+  class AccessToken < ApplicationRecord
   end
 end
