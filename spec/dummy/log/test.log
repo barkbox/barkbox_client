@@ -1,0 +1,1902 @@
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "barkbox_client_auth_tokens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "barkbox_user_id" integer NOT NULL, "access_token" varchar NOT NULL, "email" varchar, "last_verified_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170213224124')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 19:41:32.765714"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 19:43:32.777587"], ["updated_at", "2017-02-14 19:43:32.777587"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 19:43:32.786377"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 19:43:32.787049"], ["updated_at", "2017-02-14 19:43:32.787049"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 19:43:32.791798"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 19:43:32.792330"], ["updated_at", "2017-02-14 19:43:32.792330"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 19:43:32.796848"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 19:43:32.797381"], ["updated_at", "2017-02-14 19:43:32.797381"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.2ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 21:47:24.399090"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 21:49:24.412823"], ["updated_at", "2017-02-14 21:49:24.412823"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 21:49:24.422696"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 21:49:24.424923"], ["updated_at", "2017-02-14 21:49:24.424923"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 21:49:24.429362"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 21:49:24.429854"], ["updated_at", "2017-02-14 21:49:24.429854"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 21:49:24.434239"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 21:49:24.434742"], ["updated_at", "2017-02-14 21:49:24.434742"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (1.2ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 22:27:56.569047"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:29:56.578198"], ["updated_at", "2017-02-14 22:29:56.578198"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:29:56.590390"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:29:56.593149"], ["updated_at", "2017-02-14 22:29:56.593149"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:29:56.599328"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:29:56.600093"], ["updated_at", "2017-02-14 22:29:56.600093"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:29:56.605541"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:29:56.606043"], ["updated_at", "2017-02-14 22:29:56.606043"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (1.2ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 22:28:54.312158"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:30:54.333859"], ["updated_at", "2017-02-14 22:30:54.333859"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:30:54.344920"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:30:54.347639"], ["updated_at", "2017-02-14 22:30:54.347639"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:30:54.355480"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:30:54.356003"], ["updated_at", "2017-02-14 22:30:54.356003"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:30:54.361254"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:30:54.361781"], ["updated_at", "2017-02-14 22:30:54.361781"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (2.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (1.2ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 22:30:04.599636"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:32:04.615138"], ["updated_at", "2017-02-14 22:32:04.615138"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:32:04.625268"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:32:04.627751"], ["updated_at", "2017-02-14 22:32:04.627751"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:32:04.633091"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:32:04.633775"], ["updated_at", "2017-02-14 22:32:04.633775"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:32:04.638536"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:32:04.639067"], ["updated_at", "2017-02-14 22:32:04.639067"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (1.2ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 22:31:04.333240"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:33:04.341740"], ["updated_at", "2017-02-14 22:33:04.341740"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:33:04.358608"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:33:04.359765"], ["updated_at", "2017-02-14 22:33:04.359765"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:33:04.364822"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:33:04.365326"], ["updated_at", "2017-02-14 22:33:04.365326"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:33:04.369628"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:33:04.370140"], ["updated_at", "2017-02-14 22:33:04.370140"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (1.2ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 22:31:58.201864"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:33:58.209615"], ["updated_at", "2017-02-14 22:33:58.209615"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:33:58.218411"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:33:58.220630"], ["updated_at", "2017-02-14 22:33:58.220630"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:33:58.225460"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:33:58.226958"], ["updated_at", "2017-02-14 22:33:58.226958"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:33:58.232120"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:33:58.232620"], ["updated_at", "2017-02-14 22:33:58.232620"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 22:32:42.110880"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:34:42.116302"], ["updated_at", "2017-02-14 22:34:42.116302"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:34:42.123730"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:34:42.124386"], ["updated_at", "2017-02-14 22:34:42.124386"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:34:42.130019"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:34:42.130734"], ["updated_at", "2017-02-14 22:34:42.130734"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:34:42.135618"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:34:42.136159"], ["updated_at", "2017-02-14 22:34:42.136159"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 22:33:24.454449"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:35:24.460207"], ["updated_at", "2017-02-14 22:35:24.460207"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:35:24.475401"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:35:24.475972"], ["updated_at", "2017-02-14 22:35:24.475972"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:35:24.481446"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:35:24.481990"], ["updated_at", "2017-02-14 22:35:24.481990"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:35:24.489123"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:35:24.489613"], ["updated_at", "2017-02-14 22:35:24.489613"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (1.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 22:34:54.152317"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:36:54.161137"], ["updated_at", "2017-02-14 22:36:54.161137"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:36:54.171293"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:36:54.173626"], ["updated_at", "2017-02-14 22:36:54.173626"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:36:54.178618"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:36:54.179412"], ["updated_at", "2017-02-14 22:36:54.179412"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:36:54.186319"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:36:54.186911"], ["updated_at", "2017-02-14 22:36:54.186911"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 22:35:22.950736"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:37:22.956808"], ["updated_at", "2017-02-14 22:37:22.956808"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "12345"]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:37:22.979656"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:37:22.980265"], ["updated_at", "2017-02-14 22:37:22.980265"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:37:22.985577"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:37:22.986085"], ["updated_at", "2017-02-14 22:37:22.986085"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:37:22.991198"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:37:22.991683"], ["updated_at", "2017-02-14 22:37:22.991683"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.2ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 22:35:29.596855"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:37:29.602891"], ["updated_at", "2017-02-14 22:37:29.602891"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+  [1m[36mBarkboxClient::Auth Load (1.0ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "12345"]]
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.0ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:37:29.620062"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:37:29.620686"], ["updated_at", "2017-02-14 22:37:29.620686"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:37:29.626501"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:37:29.627094"], ["updated_at", "2017-02-14 22:37:29.627094"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:37:29.632509"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:37:29.633002"], ["updated_at", "2017-02-14 22:37:29.633002"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 22:35:35.483970"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:37:35.490030"], ["updated_at", "2017-02-14 22:37:35.490030"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "12345"]]
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:37:35.505253"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:37:35.505857"], ["updated_at", "2017-02-14 22:37:35.505857"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:37:35.511275"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:37:35.511789"], ["updated_at", "2017-02-14 22:37:35.511789"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.3ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:37:35.518647"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:37:35.519249"], ["updated_at", "2017-02-14 22:37:35.519249"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.2ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-14 22:36:07.966905"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:38:07.972539"], ["updated_at", "2017-02-14 22:38:07.972539"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"12345"}
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "12345"]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:38:07.987768"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:38:07.988366"], ["updated_at", "2017-02-14 22:38:07.988366"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:38:07.994588"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:38:07.995077"], ["updated_at", "2017-02-14 22:38:07.995077"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("access_token", "last_verified_at", "barkbox_user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_token", "12345"], ["last_verified_at", "2017-02-12 22:38:08.000019"], ["barkbox_user_id", 1], ["created_at", "2017-02-14 22:38:08.000487"], ["updated_at", "2017-02-14 22:38:08.000487"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (1.4ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (1.4ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "3e47aacb1e2e23cb2db883bc1211d6cc"], ["refresh_token", "048596487b8350d93fa100b9274d0223"], ["created_at", "2017-02-14 22:52:53.004587"], ["updated_at", "2017-02-14 22:52:53.004587"]]
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 2], ["email", "test2@example.com"], ["access_token", "4d15ea2fe9da00f2e536d2a70c34a094"], ["refresh_token", "7675353ba8ec19f266b75d711deded2a"], ["created_at", "2017-02-14 22:52:53.012039"], ["updated_at", "2017-02-14 22:52:53.012039"]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 3], ["email", "test3@example.com"], ["access_token", "5713f6c0ba23db383a1b015f660a84c9"], ["refresh_token", "8d11210d9dfa4532cc6afa605bbc2502"], ["access_token_expires_at", "2017-02-12 22:52:53.014556"], ["created_at", "2017-02-14 22:52:53.015424"], ["updated_at", "2017-02-14 22:52:53.015424"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.2ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (1.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 4], ["email", "test4@example.com"], ["access_token", "ea253340129bafba84ea568892c70a57"], ["refresh_token", "e5614248c115df406c5111a8e4937515"], ["created_at", "2017-02-14 22:52:53.026779"], ["updated_at", "2017-02-14 22:52:53.026779"]]
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "3f75da47235f0364cded97a094bb778d"], ["refresh_token", "89fb8047d3d182cf57527e09976fffc1"], ["created_at", "2017-02-14 22:53:45.858622"], ["updated_at", "2017-02-14 22:53:45.858622"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"3f75da47235f0364cded97a094bb778d"}
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "3f75da47235f0364cded97a094bb778d"]]
+Completed 200 OK in 8ms (ActiveRecord: 0.1ms)
+  [1m[35m (2.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 2], ["email", "test2@example.com"], ["access_token", "b0dec424fcfdc220ceb4148fe17c7a32"], ["refresh_token", "1f1aac7be10f17787ecaa9bb600baaf2"], ["created_at", "2017-02-14 22:53:45.875571"], ["updated_at", "2017-02-14 22:53:45.875571"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 3], ["email", "test3@example.com"], ["access_token", "966f00250f219a0b7a4810cd63afa9bd"], ["refresh_token", "4d02e7671ca1ec0530e607ef6e26317e"], ["access_token_expires_at", "2017-02-12 22:53:45.880650"], ["created_at", "2017-02-14 22:53:45.881834"], ["updated_at", "2017-02-14 22:53:45.881834"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 4], ["email", "test4@example.com"], ["access_token", "36443af26e5bcb8859983dee108edcf8"], ["refresh_token", "58eb2b9c55a1e2482498aaf0b9f74b0a"], ["created_at", "2017-02-14 22:53:45.891938"], ["updated_at", "2017-02-14 22:53:45.891938"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.2ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (1.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.3ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "a911eb775496d0b1aeb4c60b69e6d803"], ["refresh_token", "36b8d326ff01bb49b8c2e3c4f152c57a"], ["created_at", "2017-02-14 22:54:49.100663"], ["updated_at", "2017-02-14 22:54:49.100663"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"a911eb775496d0b1aeb4c60b69e6d803"}
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "a911eb775496d0b1aeb4c60b69e6d803"]]
+Completed 200 OK in 5ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 2], ["email", "test2@example.com"], ["access_token", "0b14e2177e64b4c6628011e9573df63b"], ["refresh_token", "d0fae6b94b71fc7fc33dc4d9de7c4931"], ["created_at", "2017-02-14 22:54:49.113807"], ["updated_at", "2017-02-14 22:54:49.113807"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 3], ["email", "test3@example.com"], ["access_token", "364c6cfdc13fdac15c86876dcfe31256"], ["refresh_token", "3f3b2a632178bd8873b9a71a13b8ed55"], ["access_token_expires_at", "2017-02-12 22:54:49.120587"], ["created_at", "2017-02-14 22:54:49.122015"], ["updated_at", "2017-02-14 22:54:49.122015"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 4], ["email", "test4@example.com"], ["access_token", "dfeb09f4252363228f0db477cfb28ee6"], ["refresh_token", "398e6318addbb40c8f0c6ee7082574c0"], ["created_at", "2017-02-14 22:54:49.129714"], ["updated_at", "2017-02-14 22:54:49.129714"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "0c7d03729025fc7f9cfeb54d281c0e1a"], ["refresh_token", "5b4fba8504ab2d7298319a558a8a8ec0"], ["created_at", "2017-02-14 22:55:46.120535"], ["updated_at", "2017-02-14 22:55:46.120535"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+  [1m[36m (1.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "8b1e6807e883e984c8cfb097c7ba3074"], ["refresh_token", "690ebf511c127b0cfbdfd64649a5fd39"], ["created_at", "2017-02-14 22:56:28.629985"], ["updated_at", "2017-02-14 22:56:28.629985"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+  [1m[36m (1.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "5c28b9d6cf1729f766c29b02ae170e79"], ["refresh_token", "323440a54550e9f07aa3cb576d0dde8c"], ["created_at", "2017-02-14 22:57:47.267376"], ["updated_at", "2017-02-14 22:57:47.267376"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.2ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "5e762edfe8b4f45615d1f3686423d9f4"], ["refresh_token", "ff1447753fd75438589b468780c087e2"], ["created_at", "2017-02-14 22:58:05.417018"], ["updated_at", "2017-02-14 22:58:05.417018"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"5e762edfe8b4f45615d1f3686423d9f4"}
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1  [["access_token", "5e762edfe8b4f45615d1f3686423d9f4"]]
+Completed 200 OK in 6ms (ActiveRecord: 0.1ms)
+  [1m[36m (1.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "23c81e268636bcd707669299b1b0ad0f"], ["refresh_token", "7450ee9cdf0938bd68b54285c005632c"], ["created_at", "2017-02-14 23:11:07.251419"], ["updated_at", "2017-02-14 23:11:07.251419"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.2ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "e12b1069137430ab7cf3614a2a685b08"], ["refresh_token", "8a04eb8f535ecc24e8492488cc5a63ff"], ["created_at", "2017-02-14 23:11:33.911753"], ["updated_at", "2017-02-14 23:11:33.911753"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "3ac16bb9cf8bef4ab9eace59be57860e"], ["refresh_token", "13ea6b92857dbbd7acccb59d94f03f95"], ["created_at", "2017-02-14 23:11:51.323397"], ["updated_at", "2017-02-14 23:11:51.323397"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "34a4f74027ba51b75b85481c15962c1c"], ["refresh_token", "4fa60021055418b717ec6d6066058bc0"], ["created_at", "2017-02-14 23:12:03.236099"], ["updated_at", "2017-02-14 23:12:03.236099"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "d2fcde15b8429bf3db1d6604a56340f1"], ["refresh_token", "7e63de003a3fbde59e8228ca7767fdf1"], ["created_at", "2017-02-14 23:12:18.153482"], ["updated_at", "2017-02-14 23:12:18.153482"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "05fb59e8590866580f5cdf5173ab1515"], ["refresh_token", "2405dcf5ce7b1c82b035ee4c2917ca51"], ["access_token_expires_at", "2017-02-12 23:14:19.354219"], ["created_at", "2017-02-14 23:14:19.366438"], ["updated_at", "2017-02-14 23:14:19.366438"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+  [1m[36m (1.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "59d3a4961c43a23cffd571cd0b4aaf5a"], ["refresh_token", "11d292f6667424ece4da9fd1653a24b3"], ["access_token_expires_at", "2017-02-12 23:15:40.594105"], ["created_at", "2017-02-14 23:15:40.601781"], ["updated_at", "2017-02-14 23:15:40.601781"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "3ba7dca8138598bd6997e2b10b6b40a0"], ["refresh_token", "ac0a1cbe1de653d42047308a5684b39e"], ["access_token_expires_at", "2017-02-12 23:16:53.669285"], ["created_at", "2017-02-14 23:16:53.698471"], ["updated_at", "2017-02-14 23:16:53.698471"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "287c57d65acd7826b9fd267f103017d3"], ["refresh_token", "fb71927367bd149997de62d5b8a32f88"], ["access_token_expires_at", "2017-02-12 23:19:21.446028"], ["created_at", "2017-02-14 23:19:21.458865"], ["updated_at", "2017-02-14 23:19:21.458865"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "1212462112bb4fbc87b8ae142084f148"], ["refresh_token", "71154ef6bb9c76a14308536811af4639"], ["access_token_expires_at", "2017-02-12 23:20:09.384797"], ["created_at", "2017-02-14 23:20:09.397512"], ["updated_at", "2017-02-14 23:20:09.397512"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "038369c375a7493fd23e07933ad5084a"], ["refresh_token", "cf04739710ee746315f8846954282c5a"], ["access_token_expires_at", "2017-02-12 23:20:30.029854"], ["created_at", "2017-02-14 23:20:30.037701"], ["updated_at", "2017-02-14 23:20:30.037701"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "59421a236e635c5bec2e9d2a9843a9b2"], ["refresh_token", "78051b5fd934e29c62cd65a322cfcdbf"], ["access_token_expires_at", "2017-02-12 23:20:38.325807"], ["created_at", "2017-02-14 23:20:38.333903"], ["updated_at", "2017-02-14 23:20:38.333903"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "bacd2d3e971ef8cbca494915d4059528"], ["refresh_token", "eec7a2dfa55988f63a4681d51decccd7"], ["access_token_expires_at", "2017-02-12 23:21:39.651487"], ["created_at", "2017-02-14 23:21:39.658921"], ["updated_at", "2017-02-14 23:21:39.658921"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "e608da8b0ad3eff089b5af6cc6b39d17"], ["refresh_token", "d0170eaf27f8cfdd9e5f039c8ef50634"], ["access_token_expires_at", "2017-02-12 23:22:28.476382"], ["created_at", "2017-02-14 23:22:28.484775"], ["updated_at", "2017-02-14 23:22:28.484775"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.8ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "6a98c7c5f6190ba5974ee502162f88df"], ["refresh_token", "efddef93fc67ac43601c7a3017689b6c"], ["access_token_expires_at", "2017-02-12 23:22:41.138735"], ["created_at", "2017-02-14 23:22:41.146516"], ["updated_at", "2017-02-14 23:22:41.146516"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "47fb7da70768c39ff0d2c0c73628a0c0"], ["refresh_token", "16ef8c5d5da44214acfec7b14a33bf75"], ["access_token_expires_at", "2017-02-12 23:23:59.796092"], ["created_at", "2017-02-14 23:23:59.804678"], ["updated_at", "2017-02-14 23:23:59.804678"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "6bb9649f25a74d6f081cebf3526f4dcd"], ["refresh_token", "40d7da487ad219f5c59dc37d536c8381"], ["access_token_expires_at", "2017-02-12 23:24:12.373241"], ["created_at", "2017-02-14 23:24:12.381593"], ["updated_at", "2017-02-14 23:24:12.381593"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1  [["access_token", "6bb9649f25a74d6f081cebf3526f4dcd"]]
+Completed 200 OK in 11ms (ActiveRecord: 0.1ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "ffd8ecc6c3340e1a8774ef48b63c74f6"], ["refresh_token", "b7a7eb3b92cfd4d3f8a4e7e81b94988e"], ["created_at", "2017-02-14 23:24:22.682214"], ["updated_at", "2017-02-14 23:24:22.682214"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"ffd8ecc6c3340e1a8774ef48b63c74f6"}
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "ffd8ecc6c3340e1a8774ef48b63c74f6"]]
+Completed 200 OK in 4ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 2], ["email", "test2@example.com"], ["access_token", "c0f1a9f1b8063f06eca5a7c2b2d1b807"], ["refresh_token", "4e019526cda2c0cd97cee11e8e523367"], ["created_at", "2017-02-14 23:24:22.694464"], ["updated_at", "2017-02-14 23:24:22.694464"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 3], ["email", "test3@example.com"], ["access_token", "d8042bd987c4ef364cfb969505ca7ce1"], ["refresh_token", "576ceff2edc09e590da4933a3d4de515"], ["access_token_expires_at", "2017-02-12 23:24:22.699898"], ["created_at", "2017-02-14 23:24:22.700825"], ["updated_at", "2017-02-14 23:24:22.700825"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "d8042bd987c4ef364cfb969505ca7ce1"]]
+Completed 200 OK in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 4], ["email", "test4@example.com"], ["access_token", "426c320e7f19c46fe3e7f32bdba7834c"], ["refresh_token", "44f82bba6b3e37f9f1ea98f964366621"], ["created_at", "2017-02-14 23:24:22.707360"], ["updated_at", "2017-02-14 23:24:22.707360"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "426c320e7f19c46fe3e7f32bdba7834c"]]
+Completed 200 OK in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.2ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "cb6ef70cb45a1dd7dec1e47211ffbeac"], ["refresh_token", "9f6138b582e8bcc31eb3434401c6db70"], ["access_token_expires_at", "2017-02-12 23:25:27.814840"], ["created_at", "2017-02-14 23:25:27.824980"], ["updated_at", "2017-02-14 23:25:27.824980"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.1ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1  [["access_token", "cb6ef70cb45a1dd7dec1e47211ffbeac"]]
+Completed 200 OK in 6ms (ActiveRecord: 0.1ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (1.2ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "e7ba2dc5fa084c611a59f1e1b47b2125"], ["refresh_token", "58b96ad80d30c0d26e74c5d371dbd012"], ["created_at", "2017-02-14 23:25:38.588313"], ["updated_at", "2017-02-14 23:25:38.588313"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"e7ba2dc5fa084c611a59f1e1b47b2125"}
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "e7ba2dc5fa084c611a59f1e1b47b2125"]]
+Completed 200 OK in 10ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 2], ["email", "test2@example.com"], ["access_token", "1ea92ff712513752d39fc8ee9e47238c"], ["refresh_token", "890adc67a80819f981e31dd45d09d6a4"], ["created_at", "2017-02-14 23:25:38.609040"], ["updated_at", "2017-02-14 23:25:38.609040"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 3], ["email", "test3@example.com"], ["access_token", "47e1c70f1176de937979eb94d987f360"], ["refresh_token", "fe9b04973841ef4c135d50b00410b440"], ["access_token_expires_at", "2017-02-12 23:25:38.614747"], ["created_at", "2017-02-14 23:25:38.615744"], ["updated_at", "2017-02-14 23:25:38.615744"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "47e1c70f1176de937979eb94d987f360"]]
+Completed 200 OK in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 4], ["email", "test4@example.com"], ["access_token", "6f39e00f292c6beb503a9446a0f9733e"], ["refresh_token", "c69486bb698bb376c75cfe0ff6c82dbf"], ["created_at", "2017-02-14 23:25:38.624076"], ["updated_at", "2017-02-14 23:25:38.624076"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "6f39e00f292c6beb503a9446a0f9733e"]]
+Completed 200 OK in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.2ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by TestController#login as HTML
+  Parameters: {"email"=>"test@barkbox.com", "password"=>"[FILTERED]"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms)
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths"  ORDER BY "barkbox_client_auths"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 1], ["email", "test1@example.com"], ["access_token", "64df5de5e770b3d244db391512caa091"], ["refresh_token", "480af84386cdc6670128ba56d66c5433"], ["created_at", "2017-02-14 23:26:16.458845"], ["updated_at", "2017-02-14 23:26:16.458845"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  Parameters: {"access_token"=>"64df5de5e770b3d244db391512caa091"}
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "64df5de5e770b3d244db391512caa091"]]
+Completed 200 OK in 5ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 2], ["email", "test2@example.com"], ["access_token", "e3e007c5e9c91f87a99bc082593888cc"], ["refresh_token", "ab2a7c7b508db1143ea55404ae1e5073"], ["created_at", "2017-02-14 23:26:16.471968"], ["updated_at", "2017-02-14 23:26:16.471968"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "e3e007c5e9c91f87a99bc082593888cc"]]
+Completed 200 OK in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "access_token_expires_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 3], ["email", "test3@example.com"], ["access_token", "5525437c9f2be7dc571fb60865f6b3a8"], ["refresh_token", "17702a6c737f18447e446e10345db17c"], ["access_token_expires_at", "2017-02-12 23:26:16.477351"], ["created_at", "2017-02-14 23:26:16.478394"], ["updated_at", "2017-02-14 23:26:16.478394"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "5525437c9f2be7dc571fb60865f6b3a8"]]
+Completed 200 OK in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "barkbox_client_auths" ("barkbox_user_id", "email", "access_token", "refresh_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["barkbox_user_id", 4], ["email", "test4@example.com"], ["access_token", "f5789a002847b78247f250c608ce8b08"], ["refresh_token", "ba5c91248517327db37718a5c62468d0"], ["created_at", "2017-02-14 23:26:16.484239"], ["updated_at", "2017-02-14 23:26:16.484239"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TestController#authenticated as HTML
+  [1m[36mBarkboxClient::Auth Load (0.1ms)[0m  [1mSELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" = ? LIMIT 1[0m  [["access_token", "f5789a002847b78247f250c608ce8b08"]]
+Completed 200 OK in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (2.5ms)[0m  rollback transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Processing by TestController#authenticated as HTML
+  [1m[35mBarkboxClient::Auth Load (0.8ms)[0m  SELECT  "barkbox_client_auths".* FROM "barkbox_client_auths" WHERE "barkbox_client_auths"."access_token" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m

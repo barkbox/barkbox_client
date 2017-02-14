@@ -13,13 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20170213224124) do
 
-  create_table "barkbox_client_auth_tokens", force: :cascade do |t|
-    t.integer  "barkbox_user_id",  null: false
-    t.string   "access_token",     null: false
+  create_table "barkbox_client_auths", force: :cascade do |t|
+    t.integer  "barkbox_user_id",         null: false
+    t.string   "access_token",            null: false
+    t.datetime "access_token_expires_at"
+    t.string   "refresh_token"
     t.string   "email"
-    t.datetime "last_verified_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
+
+  add_index "barkbox_client_auths", ["access_token"], name: "index_barkbox_client_auths_on_access_token", unique: true
+  add_index "barkbox_client_auths", ["barkbox_user_id"], name: "index_barkbox_client_auths_on_barkbox_user_id"
 
 end

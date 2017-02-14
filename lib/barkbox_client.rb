@@ -48,21 +48,31 @@ module BarkboxClient
       return json(response)
     end
 
-    def user user_token, protocol, path, params={}
+    def user local_token, protocol, path, params={}
       path = '/api/v2/' + path unless path.include?('http')
-      token = OAuth2::AccessToken.new(client, user_token.access_token)
-      token.refresh! if token.expired?
-      response = token.send(protocol.to_s, path, options_for(protocol, params))
+      response = user_token(local_token).send(protocol.to_s, path, options_for(protocol, params))
       raise ApiError.new(response) unless (response.status == 200)
       return json(response)
     end
 
-    def user_token_from_credentials email, password
+    def login email, password
       response = client.password.get_token(email, password)
       if response.nil? || response.token.nil? || response.token.empty?
         return nil
       end
       return response
+    end
+
+    def user_token(local_token)
+      token = OAuth2::AccessToken.new(client, local_token.access_token, {
+        access_token_expires_at: local_token.access_token,
+        refresh_token: local_token.refresh_token
+      })
+      if token.expired?
+        token = token.refresh!
+        local_token.update_from_oauth2_access_token(token)
+      end
+      token
     end
 
     def client
@@ -92,6 +102,10 @@ module BarkboxClient
 
     def barkbox_oauth_token
       @barkbox_oauth_token ||= ENV['BARKBOX_OAUTH_TOKEN']
+    end
+
+    def auth_class
+      @auth_class ||= BarkboxClient::Auth
     end
 
   private
