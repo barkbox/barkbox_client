@@ -56,23 +56,31 @@ module BarkboxClient
     end
 
     def login email, password
-      response = client.password.get_token(email, password)
-      if response.nil? || response.token.nil? || response.token.empty?
+      oauth_token = client.password.get_token(email, password)
+      if oauth_token.nil? || oauth_token.token.nil? || oauth_token.token.empty?
         return nil
       end
-      return response
+      oauth_token
     end
 
-    def user_token(local_token)
-      token = OAuth2::AccessToken.new(client, local_token.access_token, {
+    def verify local_token
+      oauth_token = user_token(local_token)
+      oauth_token = oauth_token.refresh! if oauth_token.try(:expired?)
+      if oauth_token.nil? || oauth_token.token.nil? || oauth_token.token.empty?
+        return nil
+      end
+      oauth_token
+    end
+
+    def me local_token
+      BarkboxClient.user(local_token, :get, 'me')
+    end
+
+    def user_token local_token
+      OAuth2::AccessToken.new(client, local_token.access_token, {
         access_token_expires_at: local_token.access_token,
         refresh_token: local_token.refresh_token
       })
-      if token.expired?
-        token = token.refresh!
-        local_token.update_from_oauth2_access_token(token)
-      end
-      token
     end
 
     def client
@@ -82,7 +90,6 @@ module BarkboxClient
     def app_token
       @app_token ||= client.client_credentials.get_token
     end
-
 
     def app_id
       @app_id ||= ENV['BARKBOX_APP_ID']

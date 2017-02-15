@@ -33,6 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.5"
   spec.add_development_dependency "rspec-rails", "~> 3.5"
   spec.add_development_dependency "factory_girl_rails"
+  spec.add_development_dependency "webmock"
 
   spec.add_runtime_dependency "multi_json"
   spec.add_runtime_dependency "oauth2", "~> 1.1.0"

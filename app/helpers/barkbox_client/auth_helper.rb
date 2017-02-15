@@ -2,9 +2,8 @@ module BarkboxClient
   module AuthHelper
 
     def authenticate!
-      auth = BarkboxClient.auth_class.find_by_access_token(request_token)
-      success = !BarkboxClient.user_token(auth).expired?
-      raise BarkboxClient::Unauthenticated unless success
+      ok = BarkboxClient.auth_class.verify(request_token)
+      raise BarkboxClient::UnauthenticatedError unless ok
     end
 
     def request_token
@@ -14,5 +13,6 @@ module BarkboxClient
         return params[:access_token]
       end
     end
+
   end
 end

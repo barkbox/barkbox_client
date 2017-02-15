@@ -21,4 +21,4 @@ class BarkboxClient::ApiError < StandardError
   end
 end
 
-class BarkboxClient::Unauthenticated < StandardError ; end
+class BarkboxClient::UnauthenticatedError < StandardError ; end
