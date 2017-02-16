@@ -4,6 +4,7 @@ class TestController < ApplicationController
   before_action :authenticate!, only: [:authenticated]
 
   def login
+    BarkboxClient.auth_class.login(params[:email], params[:password])
     head :ok
   end
 

@@ -35,14 +35,27 @@ describe TestController do
   end
 
   it 'authenticates via username and password' do
-    post :login, {email: 'test@barkbox.com', password: 'barkbarkgoose'}
+    oauth_token = OAuth2::AccessToken.new(BarkboxClient.client, 'new_token', {
+      refresh_token: 'refresh_token', expires_at: Time.zone.now + 1.day
+    })
+    expect(BarkboxClient).to receive(:login) { oauth_token }
+    post :login, {email: 'test@example.com', password: 'barkbarkgoose'}
     expect(response).to be_ok
-    expect(BarkboxClient::Auth.last.email).to eq('test@barkbox.com')
+    expect(BarkboxClient::Auth.last.email).to eq('test@example.com')
   end
 
   it 'authenticates via token parameter' do
     token = create(:auth)
     get :authenticated, {access_token: token.access_token}
+    expect(response).to be_ok
+  end
+
+  it 'authenticates with valid access_token without existing local record' do
+    oauth_token = OAuth2::AccessToken.new(BarkboxClient.client, 'new_token', {
+      refresh_token: 'refresh_token', expires_at: Time.zone.now + 1.day
+    })
+    expect(BarkboxClient).to receive(:login) { oauth_token }
+    get :authenticated, {access_token: oauth_token.token}
     expect(response).to be_ok
   end
 
