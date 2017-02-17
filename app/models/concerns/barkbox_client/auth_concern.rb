@@ -39,13 +39,17 @@ module BarkboxClient
 
     def sync_from_barkbox
       data = BarkboxClient.me(self)
-      self.email = data[:user][:email]
-      self.barkbox_user_id = data[:user][:id]
+      update_from_barkbox_user_data(data[:user])
     end
 
     def sync_from_barkbox!
       sync_from_barkbox
       save!
+    end
+
+    # Override to store additional information like email, full_name, etc
+    def update_from_barkbox_user_data user_data
+      self.barkbox_user_id = user_data[:id]
     end
 
     class_methods do

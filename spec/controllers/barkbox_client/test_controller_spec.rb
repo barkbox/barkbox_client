@@ -42,7 +42,7 @@ describe TestController do
     expect(BarkboxClient).to receive(:login) { oauth_token }
     post :login, {email: 'test@example.com', password: 'barkbarkgoose'}
     expect(response).to be_ok
-    expect(Auth.last.email).to eq('test@example.com')
+    expect(Auth.last.barkbox_user_id).to eq(6789)
   end
 
   it 'authenticates via token parameter' do
