@@ -112,7 +112,7 @@ module BarkboxClient
     end
 
     def auth_class
-      @auth_class ||= BarkboxClient::Auth
+      @auth_class
     end
 
   private

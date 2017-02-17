@@ -8,6 +8,7 @@ describe TestController do
       config.barkbox_secret = 'XXXXXXXXXXXXXXX'
       config.barkbox_oauth_token = 'XXXXXXXXXXXXXXX'
       config.barkbox_auth_url = 'http://example.com'
+      config.auth_class = Auth
     end
     me_json = {
       user: {

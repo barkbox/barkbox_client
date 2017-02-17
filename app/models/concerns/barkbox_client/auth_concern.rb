@@ -1,5 +1,6 @@
 module BarkboxClient
-  class Auth < ActiveRecord::Base
+  module AuthConcern
+    extend ActiveSupport::Concern
 
     def expired?
       access_token_expires_at.present? && access_token_expires_at < Time.zone.now
@@ -47,7 +48,7 @@ module BarkboxClient
       save!
     end
 
-    class << self
+    class_methods do
 
       def verify access_token
         return nil if access_token.blank?
