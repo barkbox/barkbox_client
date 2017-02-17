@@ -65,9 +65,7 @@ module BarkboxClient
 
     def verify local_token
       oauth_token = user_token(local_token)
-      puts "VERIFY OAUTH TOKEN: #{oauth_token.inspect}"
       oauth_token = oauth_token.refresh! if oauth_token.try(:expired?)
-      puts "VERIFY OAUTH TOKEN: #{oauth_token.inspect}"
       if oauth_token.nil? || oauth_token.token.nil? || oauth_token.token.empty?
         return nil
       end

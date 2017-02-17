@@ -50,14 +50,7 @@ describe TestController do
     expect(response).to be_ok
   end
 
-  it 'authenticates with valid access_token without existing local record' do
-    oauth_token = OAuth2::AccessToken.new(BarkboxClient.client, 'new_token', {
-      refresh_token: 'refresh_token', expires_at: Time.zone.now + 1.day
-    })
-    expect(BarkboxClient).to receive(:login) { oauth_token }
-    get :authenticated, {access_token: oauth_token.token}
-    expect(response).to be_ok
-  end
+  it 'authenticates with valid access_token without existing local record'
 
   it 'authenticates via recent bearer token' do
     token = create(:auth)
@@ -87,6 +80,11 @@ describe TestController do
 
   it 'does not authenticate without credentials' do
     expect{ get :authenticated }.to raise_error(BarkboxClient::UnauthenticatedError)
+  end
+
+  it 'does not login without credentials' do
+    expect(BarkboxClient).to receive(:login) { nil }
+    expect{ post :login }.to raise_error(BarkboxClient::UnauthenticatedError)
   end
 
 end

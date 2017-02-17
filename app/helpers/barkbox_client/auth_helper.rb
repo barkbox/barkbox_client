@@ -1,9 +1,14 @@
 module BarkboxClient
   module AuthHelper
 
+    def login!
+      auth = BarkboxClient.auth_class.login(params[:email], params[:password])
+      raise BarkboxClient::UnauthenticatedError unless auth.present?
+    end
+
     def authenticate!
-      ok = BarkboxClient.auth_class.verify(request_token)
-      raise BarkboxClient::UnauthenticatedError unless ok
+      auth = BarkboxClient.auth_class.verify(request_token)
+      raise BarkboxClient::UnauthenticatedError unless auth.present?
     end
 
     def request_token

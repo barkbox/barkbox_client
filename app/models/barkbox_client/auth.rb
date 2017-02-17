@@ -38,8 +38,6 @@ module BarkboxClient
 
     def sync_from_barkbox
       data = BarkboxClient.me(self)
-      puts "BEFORE: #{self.inspect}"
-      p data
       self.email = data[:user][:email]
       self.barkbox_user_id = data[:user][:id]
     end
@@ -52,17 +50,20 @@ module BarkboxClient
     class << self
 
       def verify access_token
+        return nil if access_token.blank?
         auth = where(access_token: access_token).first_or_initialize
         auth.verify!
+        auth.expired? ? nil : auth
       end
 
       def login email, password
         oauth_token = BarkboxClient.login(email, password)
+        return nil if oauth_token.nil?
         auth = where(access_token: oauth_token.token).first_or_initialize do |auth|
           auth.update_from_oauth_token(oauth_token)
         end
         auth.sync_from_barkbox!
-        auth
+        auth.expired? ? nil : auth
       end
 
     end
