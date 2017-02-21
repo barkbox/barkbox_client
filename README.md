@@ -35,11 +35,62 @@ BarkboxClient.configure do |config|
 	config.barkbox_secret = 'XXXXXXXXXXX'
 	# The URL to use for authorization with Barkbox. Defaults to ENV['BARKBOX_AUTH_URL']
 	config.barkbox_auth_url = 'https://some.url'
-	# The oAuth token for the application. Defaults to ENV['BARKBOX_OAUTH_TOKEN']
+	# The oAuth token for the application user. Defaults to ENV['BARKBOX_OAUTH_TOKEN']
 	config.barkbox_oauth_token = 'SOMEREALLYLONGSTRING'
+	# The class used to record oauth tokens. 
+	config.auth_class = Auth
 end
+```
+
+Create a class for storing oauth tokens. It requires columns `access_token`, `access_token_expires_at`, `refresh_token` and `barkbox_user_id`. Note that a BarkBox user may have more than one valid oauth token so it is best to keep a 1:many relationship between users and authentications. An example migration:
 
 ```
+class CreateAuth < ActiveRecord::Migration
+  def change
+    create_table :auths do |t|
+      t.integer   :barkbox_user_id, null: false
+      t.string    :access_token, null: false
+      t.timestamp :access_token_expires_at
+      t.string    :refresh_token
+      t.timestamps null: false
+    end
+    add_index :auths, :barkbox_user_id
+    add_index :auths, :access_token, unique: true
+  end
+end
+```
+
+Include `BarkboxClient::AuthConcern` in your auth model. If you want to customize the data saved about a user after authenticating, override `update_from_barkbox_user_data` in your model.
+
+```
+class Auth < ApplicationRecord
+  include BarkboxClient::AuthConcern
+end
+```
+
+Include `BarkboxClient::AuthHelper` in your controllers for helper methods to require authentication or login.
+
+```
+class ApplicationController < ActionController::Base
+  include BarkboxClient::AuthHelper
+end
+
+class TestController < ApplicationController
+  include BarkboxClient::AuthHelper
+
+  before_action :login!, only: [:login]
+  before_action :authenticate!, only: [:authenticated]
+
+  def login
+    head :ok
+  end
+
+  def authenticated
+    head :ok
+  end
+end
+```
+
 
 ## Development
 

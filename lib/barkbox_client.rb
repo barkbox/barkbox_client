@@ -4,6 +4,7 @@ require "oauth2"
 require "barkbox_client/version"
 require "barkbox_client/api_error"
 require "barkbox_client/configuration"
+require "barkbox_client/engine"
 
 module BarkboxClient
 
@@ -47,21 +48,39 @@ module BarkboxClient
       return json(response)
     end
 
-    def user user, protocol, path, params={}
+    def user local_token, protocol, path, params={}
       path = '/api/v2/' + path unless path.include?('http')
-      token = OAuth2::AccessToken.new(client, user.access_token)
-      token.refresh! if token.expired?
-      response = token.send(protocol.to_s, path, options_for(protocol, params))
+      response = user_token(local_token).send(protocol.to_s, path, options_for(protocol, params))
       raise ApiError.new(response) unless (response.status == 200)
       return json(response)
     end
 
-    def user_token_from_credentials email, password
-      response = client.password.get_token(email, password)
-      if response.nil? || response.token.nil? || response.token.empty?
+    def login email, password
+      oauth_token = client.password.get_token(email, password)
+      if oauth_token.nil? || oauth_token.token.nil? || oauth_token.token.empty?
         return nil
       end
-      return response
+      oauth_token
+    end
+
+    def verify local_token
+      oauth_token = user_token(local_token)
+      oauth_token = oauth_token.refresh! if oauth_token.try(:expired?)
+      if oauth_token.nil? || oauth_token.token.nil? || oauth_token.token.empty?
+        return nil
+      end
+      oauth_token
+    end
+
+    def me local_token
+      BarkboxClient.user(local_token, :get, 'me')
+    end
+
+    def user_token local_token
+      OAuth2::AccessToken.new(client, local_token.access_token, {
+        access_token_expires_at: local_token.access_token,
+        refresh_token: local_token.refresh_token
+      })
     end
 
     def client
@@ -71,7 +90,6 @@ module BarkboxClient
     def app_token
       @app_token ||= client.client_credentials.get_token
     end
-
 
     def app_id
       @app_id ||= ENV['BARKBOX_APP_ID']
@@ -91,6 +109,10 @@ module BarkboxClient
 
     def barkbox_oauth_token
       @barkbox_oauth_token ||= ENV['BARKBOX_OAUTH_TOKEN']
+    end
+
+    def auth_class
+      @auth_class
     end
 
   private

@@ -24,4 +24,8 @@ class BarkboxClient::Configuration
   def barkbox_oauth_token=(token)
     instance.instance_variable_set(:@barkbox_oauth_token, token)
   end
+
+  def auth_class=(klass)
+    instance.instance_variable_set(:@auth_class, klass)
+  end
 end

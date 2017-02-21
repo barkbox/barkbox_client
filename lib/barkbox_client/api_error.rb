@@ -20,3 +20,5 @@ class BarkboxClient::ApiError < StandardError
     pretty_errors
   end
 end
+
+class BarkboxClient::UnauthenticatedError < StandardError ; end
