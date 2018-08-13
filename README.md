@@ -28,7 +28,7 @@ require 'barkbox_client'
 
 BarkboxClient.configure do |config|
 	# Any object that implements the Ruby logger interface. Defaults to Logger.new(STDOUT)
-	config.logger = Rails.logger 
+	config.logger = Rails.logger
 	# The application id to be used for requests to Barkbox. Defaults to ENV['BARKBOX_APP_ID']
 	config.app_id = '12345'
 	# The secret key to be used for requests to Barkbox. Defaults to ENV['BARKBOX_SECRET']
@@ -37,7 +37,7 @@ BarkboxClient.configure do |config|
 	config.barkbox_auth_url = 'https://some.url'
 	# The oAuth token for the application user. Defaults to ENV['BARKBOX_OAUTH_TOKEN']
 	config.barkbox_oauth_token = 'SOMEREALLYLONGSTRING'
-	# The class used to record oauth tokens. 
+	# The class used to record oauth tokens.
 	config.auth_class = Auth
 end
 ```
@@ -96,9 +96,8 @@ end
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `gem_push=no bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and **SKIP** pushing the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/barkbox/barkbox_client.
-
