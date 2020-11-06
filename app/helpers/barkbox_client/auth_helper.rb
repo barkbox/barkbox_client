@@ -17,7 +17,9 @@ module BarkboxClient
       elsif request.env['HTTP_AUTHORIZATION'].present?
         return request.env['HTTP_AUTHORIZATION'].gsub('Bearer ', '')
       elsif params[:access_token].present?
-        return params[:access_token]
+        params[:access_token]
+      elsif session[:access_token].present?
+        session[:access_token]
       end
     end
 
