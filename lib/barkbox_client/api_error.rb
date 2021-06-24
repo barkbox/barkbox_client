@@ -4,7 +4,7 @@ class BarkboxClient::ApiError < StandardError
   def initialize(response)
     @status = response.status
     begin
-      @errors = JSON.parse(response.body, symbolize_names: true)[:errors]
+      errors = JSON.parse(response.body, symbolize_names: true)[:errors]
       @errors = {general: errors} if errors.is_a?(String)
     rescue => e
       @errors = {general: 'Error'}
