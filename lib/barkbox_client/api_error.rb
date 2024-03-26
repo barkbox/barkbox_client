@@ -12,9 +12,16 @@ class BarkboxClient::ApiError < StandardError
   end
 
   def pretty_errors
-    return @errors if @errors.nil? || @errors.is_a?(String)
-
-    @errors.map { |k, v| "#{k} #{v}" }.join(", ")
+    case @errors
+    when String
+      @errors
+    when Hash
+      @errors.map { |k, v| "#{k} #{v}" }.join(", ")
+    when NilClass
+      "@errors was nil"
+    else
+      "Unknown error format: #{@errors}"
+    end
   end
 
   def message
