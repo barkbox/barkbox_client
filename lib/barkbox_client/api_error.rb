@@ -7,13 +7,21 @@ class BarkboxClient::ApiError < StandardError
       @errors = JSON.parse(response.body, symbolize_names: true)[:errors]
       @errors = {general: errors} if errors.is_a?(String)
     rescue => e
-      @errors = {general: 'Error'}
+      @errors = {general: e.message}
     end
   end
 
   def pretty_errors
-    return @errors if @errors.is_a?(String)
-    @errors.map { |k, v| "#{k} #{v}" }.join(", ")
+    case @errors
+    when String
+      @errors
+    when Hash
+      @errors.map { |k, v| "#{k} #{v}" }.join(", ")
+    when NilClass
+      "@errors was nil"
+    else
+      "Unknown error format: #{@errors}"
+    end
   end
 
   def message
